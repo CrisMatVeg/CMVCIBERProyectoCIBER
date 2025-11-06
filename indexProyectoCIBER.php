@@ -64,6 +64,7 @@
             <div class="card">
                 <div class="overlay"></div>
                 <span>
+                    <span>UT1: CIBERSEGURIDAD</span>
                     <a href="./doc/GLOSARIO.pdf" target="_blank">
                         <span>Glosario</span>
                     </a>
@@ -72,31 +73,25 @@
             <div class="card">
                 <div class="overlay"></div>
                 <span>
-                    <span>UT4: TÉCNICAS DE ACCESO A DATOS EN PHP</span>
+                    <span>UT2: SERVIDOR WEB SEGURO</span>
+                    <a href="https://github.com/CrisMatVeg/CMVCIBERProyectoCIBER" target="_blank">
+                        <span>Documentación</span>
+                    </a>
+                    <a href="./doc/251103ProtocoloInstalaciónServidorWebAMP.pdf" target="_blank">
+                        <span>Seguimiento Practico</span>
+                    </a>
                 </span>
             </div>
             <div class="card">
                 <div class="overlay"></div>
                 <span>
-                    <span>UT5: DESARROLLO DE APLICACIONES WEB</span>
+                    <span>UT3: APLICACIÓN WEB SEGURA</span>
                 </span>
             </div>
             <div class="card">
                 <div class="overlay"></div>
                 <span>
-                    <span>UT6: APLICACIONES WEB MULTICAPA</span>
-                </span>
-            </div>
-            <div class="card">
-                <div class="overlay"></div>
-                <span>
-                    <span>UT7: PROGRAMACIÓN DE SERVICIOS WEB</span>
-                </span>
-            </div>
-            <div class="card">
-                <div class="overlay"></div>
-                <span>
-                    <span>UT8: DESARROLLO DE APLICACIONES WEB HÍBRIDAS</span>
+                    <span>UT4: INFRAESTRUCTURA WEB SEGURA</span>
                 </span>
             </div>
         </main>
