@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>OWASP Top 10</title>
+    <style>
+        /* From extension vscode.github */
+        /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+        .vscode-dark img[src$=\#gh-light-mode-only],
+        .vscode-light img[src$=\#gh-dark-mode-only] {
+            display: none;
+        }
+    </style>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    </style>
+    <style>
+        .task-list-item {
+            list-style-type: none;
+        }
+
+        .task-list-item-checkbox {
+            margin-left: -20px;
+            vertical-align: middle;
+            pointer-events: none;
+        }
+    </style>
+
+</head>
+
+<body class="vscode-body vscode-light">
+    <h1 id="owasp-top-10">OWASP Top 10</h1>
+    <h2 id="1-broken-access-control-control-de-acceso-roto">1. Broken Access Control (Control de acceso roto)</h2>
+    <ul>
+        <li><strong>Qué es</strong>: Cuando un usuario puede acceder a recursos, funciones o datos que no debería. Esto
+            pasa cuando la aplicación no valida correctamente los permisos.</li>
+        <li><strong>Ejemplo</strong>:
+            <ul>
+                <li>Un usuario normal cambia la URL <a href="http://miweb.com/admin">miweb.com/admin</a> y accede a la
+                    sección de administrador.</li>
+                <li>Un usuario puede ver los pedidos de otros clientes simplemente cambiando un ID en la URL.</li>
+            </ul>
+        </li>
+        <li><strong>Prevención</strong>:
+            <ul>
+                <li>Implementar control de acceso en el servidor, no solo en la interfaz.</li>
+                <li>Revisar permisos para cada acción (lectura, escritura, borrado).</li>
+                <li>Evitar confiar en datos enviados por el cliente.</li>
+                <li>Pruebas de penetración regulares para validar los permisos.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2 id="2-security-misconfiguration-configuración-insegura">2. Security Misconfiguration (Configuración insegura)
+    </h2>
+    <ul>
+        <li><strong>Qué es</strong>: Cuando los sistemas, aplicaciones o servidores no están configurados correctamente,
+            dejando huecos de seguridad.</li>
+        <li><strong>Ejemplo sencillo</strong>:
+            <ul>
+                <li>Bases de datos accesibles desde Internet.</li>
+                <li>Contraseñas por defecto sin cambiar.</li>
+                <li>Mensajes de error que muestran rutas internas o credenciales.</li>
+            </ul>
+        </li>
+        <li><strong>Prevención</strong>:
+            <ul>
+                <li>Desactivar servicios innecesarios.</li>
+                <li>Cambiar todas las contraseñas por defecto.</li>
+                <li>Actualizar software y frameworks regularmente.</li>
+                <li>Revisar configuraciones de seguridad antes de desplegar en producción.</li>
+                <li>Usar escáneres automáticos para detectar configuraciones erróneas.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2 id="3-software-supply-chain-failures-fallos-en-la-cadena-de-suministro-de-software">3. Software Supply Chain
+        Failures (Fallos en la cadena de suministro de software)</h2>
+    <ul>
+        <li><strong>Qué es</strong>: Vulnerabilidades introducidas por librerías, dependencias o componentes externos
+            inseguros.</li>
+        <li><strong>Ejemplo sencillo</strong>:
+            <ul>
+                <li>Instalar una librería de JavaScript con malware.</li>
+                <li>Descargar un módulo que ya contiene vulnerabilidades conocidas.</li>
+            </ul>
+        </li>
+        <li><strong>Prevención</strong>:
+            <ul>
+                <li>Usar solo librerías oficiales y verificadas.</li>
+                <li>Mantener librerías actualizadas.</li>
+                <li>Escanear dependencias con herramientas como Snyk o OWASP Dependency-Check.</li>
+                <li>Verificar firmas digitales de paquetes cuando sea posible.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2 id="4-cryptographic-failures-fallos-criptográficos">4. Cryptographic Failures (Fallos criptográficos)</h2>
+    <ul>
+        <li><strong>Qué es</strong>: Uso incorrecto de cifrado o almacenamiento de información sensible sin protección.
+        </li>
+        <li><strong>Ejemplo sencillo</strong>:
+            <ul>
+                <li>Guardar contraseñas en texto plano.</li>
+                <li>Usar cifrados obsoletos como MD5 o SHA1.</li>
+            </ul>
+        </li>
+        <li><strong>Prevención</strong>:
+            <ul>
+                <li>Guardar contraseñas con hash seguro (bcrypt, Argon2).</li>
+                <li>Cifrar datos sensibles en tránsito (HTTPS/TLS) y en reposo.</li>
+                <li>Evitar algoritmos inseguros.</li>
+                <li>Gestionar correctamente las llaves de cifrado (rotación periódica).</li>
+            </ul>
+        </li>
+    </ul>
+    <h2 id="5-injection-inyección">5. Injection (Inyección)</h2>
+    <ul>
+        <li><strong>Qué es</strong>: Cuando un atacante puede insertar código o comandos en la aplicación que esta
+            ejecuta sin validar.</li>
+        <li><strong>Ejemplo sencillo</strong>:
+            <ul>
+                <li>SQL Injection: SELECT * FROM users WHERE id = '1 OR 1=1' devuelve todos los usuarios.</li>
+                <li>Command Injection: rm -rf /tmp/ ejecutado por un campo de formulario.</li>
+            </ul>
+        </li>
+        <li><strong>Prevención</strong>:
+            <ul>
+                <li>Usar consultas parametrizadas o ORM.</li>
+                <li>Validar y sanear todas las entradas del usuario.</li>
+                <li>Escapar caracteres especiales en comandos o queries.</li>
+                <li>Usar frameworks modernos que protegen contra inyección.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2 id="6-insecure-design-diseño-inseguro">6. Insecure Design (Diseño Inseguro)</h2>
+    <ul>
+        <li><strong>Qué es</strong>: Vulnerabilidades que provienen de decisiones de diseño, no solo de la
+            implementación.</li>
+        <li><strong>Ejemplo sencillo</strong>:
+            <ul>
+                <li>Restablecimiento de contraseña sin verificar identidad.</li>
+                <li>No pensar en límites de sesión o autenticación multifactor.</li>
+            </ul>
+        </li>
+        <li><strong>Prevención</strong>:
+            <ul>
+                <li>Diseñar la seguridad desde el inicio (“Security by Design”).</li>
+                <li>Revisar flujos de autenticación y autorización antes de implementar.</li>
+                <li>Aplicar principios de mínimos privilegios.</li>
+                <li>Realizar modelado de amenazas antes de escribir código.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2 id="7-authentication-failures-fallos-de-autenticación">7. Authentication Failures (Fallos de autenticación)</h2>
+    <ul>
+        <li><strong>Qué es</strong>: Fallas en cómo los usuarios se identifican, permitiendo que atacantes se hagan
+            pasar por otros.</li>
+        <li><strong>Ejemplo sencillo</strong>:
+            <ul>
+                <li>Permitir contraseñas simples como 12345.</li>
+                <li>No bloquear la cuenta tras múltiples intentos fallidos.</li>
+            </ul>
+        </li>
+        <li><strong>Prevención</strong>:
+            <ul>
+                <li>Requerir contraseñas fuertes y únicas.</li>
+                <li>Usar MFA (doble factor).</li>
+                <li>Implementar bloqueos temporales tras varios intentos fallidos.</li>
+                <li>Evitar almacenar contraseñas en texto plano.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2 id="8-software-or-data-integrity-failures-fallas-de-integridad">8. Software or Data Integrity Failures (Fallas
+        de integridad)</h2>
+    <ul>
+        <li><strong>Qué es</strong>: Cuando el software o los datos pueden ser alterados sin autorización.</li>
+        <li><strong>Ejemplo sencillo</strong>:
+            <ul>
+                <li>Descargar una actualización de software comprometida.</li>
+                <li>Archivos importantes modificados por un atacante.</li>
+            </ul>
+        </li>
+        <li><strong>Prevención</strong>:
+            <ul>
+                <li>Verificar integridad con hashes y firmas digitales.</li>
+                <li>Revisar que los archivos críticos no hayan sido modificados.</li>
+                <li>Control de versiones seguro y auditado.</li>
+                <li>Actualizaciones firmadas y distribuidas solo desde fuentes confiables.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2 id="9-security-logging-and-alerting-failures-fallas-en-registro-y-alertas">9. Security Logging and Alerting
+        Failures (Fallas en registro y alertas)</h2>
+    <ul>
+        <li><strong>Qué es</strong>: No registrar eventos críticos o no generar alertas cuando hay incidentes.</li>
+        <li><strong>Ejemplo sencillo</strong>:
+            <ul>
+                <li>No registrar intentos de acceso fallidos.</li>
+                <li>No alertar si alguien intenta inyectar SQL.</li>
+            </ul>
+        </li>
+        <li><strong>Prevención</strong>:
+            <ul>
+                <li>Registrar eventos críticos: logins, errores de autorización, cambios de configuración.</li>
+                <li>Configurar alertas automáticas ante comportamientos sospechosos.</li>
+                <li>Revisar logs regularmente para detectar patrones anormales.</li>
+                <li>Proteger los logs de modificaciones no autorizadas.</li>
+            </ul>
+        </li>
+    </ul>
+    <h2 id="10-mishandling-of-exceptional-conditions-manejo-incorrecto-de-excepciones">10. Mishandling of Exceptional
+        Conditions (Manejo incorrecto de excepciones)</h2>
+    <ul>
+        <li><strong>Qué es</strong>: Cuando los errores o excepciones no se manejan adecuadamente, exponiendo
+            información sensible.</li>
+        <li><strong>Ejemplo sencillo</strong>:
+            <ul>
+                <li>Mostrar un stack trace completo en pantalla al usuario.</li>
+                <li>Mensajes de error que revelan rutas de archivos o credenciales.</li>
+            </ul>
+        </li>
+        <li><strong>Prevención</strong>:
+            <ul>
+                <li>Mostrar mensajes genéricos al usuario: “Ocurrió un error, inténtelo más tarde”.</li>
+                <li>Registrar internamente los detalles del error para los administradores.</li>
+                <li>Validar todas las excepciones posibles y manejarlas con cuidado.</li>
+                <li>Evitar que errores internos se filtren al frontend.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><a
+            href="https://www.metacompliance.com/es/blog/cyber-security-awareness/owasp-top-10-2025-seguridad-web">https://www.metacompliance.com/es/blog/cyber-security-awareness/owasp-top-10-2025-seguridad-web</a>
+    </p>
+
+
+
+</body>
+
+</html>

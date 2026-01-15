@@ -50,6 +50,10 @@
                 margin: 10px;
                 width: 80%;
             }
+
+            .titulo{
+                color: teal;
+            }
         </style>
     </head>
 
@@ -64,16 +68,19 @@
             <div class="card">
                 <div class="overlay"></div>
                 <span>
-                    <span>UT1: CIBERSEGURIDAD</span>
+                    <span class="titulo">UT1: CIBERSEGURIDAD</span>
                     <a href="./doc/GLOSARIO.pdf" target="_blank">
                         <span>Glosario</span>
+                    </a>
+                    <a href="./doc/OWASP.html" target="_blank">
+                        <span>Estudio Vulneabilidades OWASP</span>
                     </a>
                 </span>
             </div>
             <div class="card">
                 <div class="overlay"></div>
                 <span>
-                    <span>UT2: SERVIDOR WEB SEGURO</span>
+                    <span class="titulo">UT2: SERVIDOR WEB SEGURO</span>
                     <a href="https://github.com/CrisMatVeg/CMVCIBERProyectoCIBER" target="_blank">
                         <span>Documentación</span>
                     </a>
@@ -85,13 +92,22 @@
             <div class="card">
                 <div class="overlay"></div>
                 <span>
-                    <span>UT3: APLICACIÓN WEB SEGURA</span>
+                    <span class="titulo">UT3: APLICACIÓN WEB SEGURA</span>
+                    <a href="../CMVDWESLoginLogoffTema5/indexLoginLogoff.php" target="_blank">
+                        <span>Login Logoff Tema 5</span>
+                    </a>
+                    <a href="../CMVDWESLoginLogoff/indexLoginLogoff.php" target="_blank">
+                        <span>Login Logoff</span>
+                    </a>
                 </span>
             </div>
             <div class="card">
                 <div class="overlay"></div>
                 <span>
-                    <span>UT4: INFRAESTRUCTURA WEB SEGURA</span>
+                    <span class="titulo">UT4: INFRAESTRUCTURA WEB SEGURA</span>
+                    <a href="./WIP.html" target="_blank">
+                        <span>Implantación de la Aplicación</span>
+                    </a>
                 </span>
             </div>
         </main>
