@@ -99,6 +99,9 @@
                     <a href="../CMVDWESLoginLogoff/indexLoginLogoff.php" target="_blank">
                         <span>Login Logoff</span>
                     </a>
+                    <a href="../CMVDWESAplicacionFinal/index.php" target="_blank">
+                        <span>Aplicación Final</span>
+                    </a>
                 </span>
             </div>
             <div class="card">
